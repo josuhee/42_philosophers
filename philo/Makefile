@@ -1,5 +1,5 @@
 CC=gcc
-SRCS=src/main.c
+SRCS=src/main.c src/philo.c src/time.c
 OBJS=$(SRCS:.c=.o)
 NAME=philo
 HEADER=-I include/
