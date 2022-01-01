@@ -1,9 +1,11 @@
 CC=gcc
-SRCS=src/main.c src/philo.c src/time.c
+SRCS=src/main.c src/philo.c src/time.c\
+		src/action.c src/init.c src/message.c\
+		src/monitor.c
 OBJS=$(SRCS:.c=.o)
 NAME=philo
 HEADER=-I include/
-CFLAG=
+CFLAG=-pthread -fsanitize=address
 
 all: $(NAME)
 

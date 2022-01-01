@@ -6,7 +6,7 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 01:28:06 by sujo              #+#    #+#             */
-/*   Updated: 2021/12/20 00:05:30 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/01 04:21:44 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int main(int argc, char *argv[])
 				printf("\033[31m[Error] Please enter the right number.\033[0m\n");
 			else
 			{
+				philo(num, argc - 1);
 				printf("complete\n");
 			}
 		}

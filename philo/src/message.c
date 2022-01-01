@@ -6,7 +6,7 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 23:33:53 by sujo              #+#    #+#             */
-/*   Updated: 2022/01/01 00:53:02 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/01 01:11:35 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ void philo_status_prnt(t_philo *philo, int status)
 
 	pthread_mutex_lock(&philo->info->m_write);
 	now_time = get_time() - philo->info->start_time;
-	if (status == DIED)
+	if (status == DIED || status == FULL)
 	{
-		printf("%llu\t%d died\n", now_time, philo->num);
+		if (status == DIED)
+			printf("%llu\t%d died\n", now_time, philo->num);
+		if (status == FULL)
+			printf("All Philosophers ate spaghetti full.\n");
 		return ;
 	}
 	if (status == FORK)

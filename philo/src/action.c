@@ -6,13 +6,13 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 07:42:23 by sujo              #+#    #+#             */
-/*   Updated: 2022/01/01 00:38:32 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/01 04:18:58 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void fork(t_philo *philo)
+void get_fork(t_philo *philo)
 {
 	if (philo->info->is_die || philo->info->is_must_eat)
 		return ;
@@ -29,7 +29,7 @@ void eat(t_philo *philo)
 	philo_status_prnt(philo, EAT);
 	vsleep(philo->info->eat);
 	philo->eat_cnt = philo->eat_cnt + 1;
-	philo->last_eat_time = now_time();
+	philo->last_eat_time = get_time();
 }
 
 void unfork(t_philo *philo)
@@ -45,7 +45,7 @@ void go_sleep(t_philo *philo)
 	if (philo->info->is_die || philo->info->is_must_eat)
 		return ;
 	philo_status_prnt(philo, SLEEP);
-	//philo->last_eat_time = now_time();
+	//philo->last_eat_time = get_time();
 	vsleep(philo->info->sleep);
 }
 

@@ -6,7 +6,7 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 23:51:45 by sujo              #+#    #+#             */
-/*   Updated: 2021/12/31 23:59:47 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/01 05:28:39 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,6 @@ void init_philo(t_info *info)
 		info->philo[idx].last_eat_time = info->start_time;
 		info->philo[idx].info = info;
 	}
+	//printf("left %d\n", info->philo[0].left);
+	//printf("right %d\n", info->philo[0].right);
 }
