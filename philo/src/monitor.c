@@ -6,7 +6,7 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 00:43:03 by sujo              #+#    #+#             */
-/*   Updated: 2021/12/30 07:41:21 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/01 00:43:48 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void *must_eat_monitor(void *info_)
 	{
 		while (info->philo[idx].eat_cnt != info->must_eat);
 	}
+	info->is_must_eat = 1;
 	// must eat complete
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 07:49:36 by sujo              #+#    #+#             */
-/*   Updated: 2021/12/20 08:13:34 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/01 00:08:15 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ long long get_time(void)
 	return ((current_time.tv_sec * 1000) + (current_time.tv_usec / 1000));
 }
 
-void	vsleep(long long time)
+void	vsleep(int time)
 {
 	long long finish_time;
 
