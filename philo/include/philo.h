@@ -6,7 +6,7 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 00:38:05 by sujo              #+#    #+#             */
-/*   Updated: 2022/01/02 01:39:31 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/02 02:25:58 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_info
 	int must_eat;
 	int is_die;
 	int is_must_eat;
-	int dnoe;
+	int done;
 	long long start_time;
 	t_philo *philo;
 	pthread_t t_eat;
@@ -80,5 +80,8 @@ void think(t_philo *philo);
 //monitor
 void *must_eat_monitor(void *info_);
 void *monitor(void *info_);
+
+//free
+void free_mutex(t_info *info);
 
 #endif

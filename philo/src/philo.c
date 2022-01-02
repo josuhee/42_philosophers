@@ -6,7 +6,7 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 00:08:20 by sujo              #+#    #+#             */
-/*   Updated: 2022/01/01 05:49:46 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/02 02:11:50 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ int philo(int *num, int size)
 	pthread_join(info.t_monitor, (void *)&status);
 	if (info.must_eat != 0)
 		pthread_join(info.t_eat, (void *)&status);
+	free_mutex(&info);
 	return (0);
 }
