@@ -1,7 +1,7 @@
 CC=gcc
 SRCS=src/main.c src/philo.c src/time.c\
 		src/action.c src/init.c src/message.c\
-		src/monitor.c
+		src/monitor.c src/free.c
 OBJS=$(SRCS:.c=.o)
 NAME=philo
 HEADER=-I include/

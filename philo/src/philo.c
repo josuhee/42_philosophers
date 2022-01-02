@@ -6,7 +6,7 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 00:08:20 by sujo              #+#    #+#             */
-/*   Updated: 2022/01/02 02:11:50 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/02 19:43:52 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void *philo_action(void *philo_)
 	t_philo *philo;
 
 	philo = (void *)philo_;
-	while (1)
+	while (!philo->info->is_die && !philo->info->is_must_eat)
 	{
 		get_fork(philo);
 		eat(philo);
@@ -51,6 +51,7 @@ static int start_philo(t_info *info)
 		if (pthread_create(&info->philo[idx].thread, NULL, philo_action, (void *)&info->philo[idx]) != 0)
 			return (1);
 		pthread_detach(info->philo[idx].thread);
+		usleep(100);
 	}
 	return (0);
 }
