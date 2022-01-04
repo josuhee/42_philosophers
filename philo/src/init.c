@@ -6,15 +6,15 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 23:51:45 by sujo              #+#    #+#             */
-/*   Updated: 2022/01/02 01:08:13 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/04 14:24:14 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int init_info(t_info *info, int *num, int size)
+int	init_info(t_info *info, int *num, int size)
 {
-	int idx;
+	int	idx;
 
 	info->total = num[0];
 	info->die = num[1];
@@ -33,9 +33,9 @@ int init_info(t_info *info, int *num, int size)
 	return (0);
 }
 
-void init_philo(t_info *info)
+void	init_philo(t_info *info)
 {
-	int idx;
+	int	idx;
 
 	idx = -1;
 	info->start_time = get_time();

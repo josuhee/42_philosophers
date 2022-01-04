@@ -6,22 +6,22 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 00:43:03 by sujo              #+#    #+#             */
-/*   Updated: 2022/01/01 05:27:27 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/04 15:40:11 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void *must_eat_monitor(void *info_)
+void	*must_eat_monitor(void *info_)
 {
-	int idx;
-	t_info *info;
+	int		idx;
+	t_info	*info;
 
 	info = (t_info *)info_;
 	idx = -1;
 	while (++idx < info->total)
 	{
-		while (info->philo[idx].eat_cnt != info->must_eat)
+		while (info->philo[idx].eat_cnt <= info->must_eat)
 		{
 			if (info->is_die)
 				return (NULL);
@@ -32,10 +32,10 @@ void *must_eat_monitor(void *info_)
 	return (NULL);
 }
 
-void *monitor(void *info_)
+void	*monitor(void *info_)
 {
-	int idx;
-	t_info *info;
+	int		idx;
+	t_info	*info;
 
 	info = (t_info *)info_;
 	while (1)

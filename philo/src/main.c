@@ -6,15 +6,15 @@
 /*   By: sujo <sujo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 01:28:06 by sujo              #+#    #+#             */
-/*   Updated: 2022/01/01 04:21:44 by sujo             ###   ########.fr       */
+/*   Updated: 2022/01/04 19:06:40 by sujo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static int ft_atoi(char* str)
+static int	ft_atoi(char *str)
 {
-	unsigned int result;
+	unsigned int	result;
 
 	result = 0;
 	while ('0' <= *str && *str <= '9')
@@ -28,9 +28,9 @@ static int ft_atoi(char* str)
 	return (result);
 }
 
-static int check_ft_atoi(char *argv[], int *num, int size)
+static int	check_ft_atoi(char *argv[], int *num, int size)
 {
-	int idx;
+	int	idx;
 
 	idx = -1;
 	while (++idx < size)
@@ -42,9 +42,9 @@ static int check_ft_atoi(char *argv[], int *num, int size)
 	return (0);
 }
 
-static int check_number_util(char *str)
+static int	check_number_util(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -56,9 +56,9 @@ static int check_number_util(char *str)
 	return (0);
 }
 
-static int check_number(int argc, char *argv[])
+static int	check_number(int argc, char *argv[])
 {
-	int idx;
+	int	idx;
 
 	idx = 0;
 	while (++idx < argc)
@@ -69,9 +69,9 @@ static int check_number(int argc, char *argv[])
 	return (0);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	int *num;
+	int	*num;
 
 	if (argc < 5 || argc > 6 || check_number(argc, argv))
 	{
@@ -89,7 +89,6 @@ int main(int argc, char *argv[])
 			else
 			{
 				philo(num, argc - 1);
-				printf("complete\n");
 			}
 		}
 		free(num);
